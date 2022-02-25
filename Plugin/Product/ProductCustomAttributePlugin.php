@@ -62,7 +62,8 @@ class ProductCustomAttributePlugin
         foreach ($searchCriteria->getItems() as $entity) {
 
             $extensionAttributes = $entity->getExtensionAttributes();
-            $extensionAttributes->setCustomAttribute1(self::CUSTOM_ATTRIBUTE2_VALUE);
+            $extensionAttributes->setData(self::ATTRIBUTE_CODE1, "Test Value 1");
+            $extensionAttributes->setData(self::ATTRIBUTE_CODE2, ['value1','value2','value3']);
             $entity->setExtensionAttributes($extensionAttributes);
 
             $products[] = $entity;
